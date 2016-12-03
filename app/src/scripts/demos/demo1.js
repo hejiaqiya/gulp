@@ -1,0 +1,51 @@
+angular.module("myApp",[])
+.controller("democon",["$scope",function($scope){
+	var user=[
+		{
+			user:"Marry",
+			email:"marry@sohu.com"
+		},
+		{
+			user:"Lili",
+			email:"lili@sohu.com"
+		}
+	]
+	$scope.user=user;
+	$scope.isShow=false;
+	$scope.counter=0;
+	$scope.add=function(){
+		this.counter++;
+	}
+	$scope.dec=function(){
+		this.counter--;
+	}
+
+	//所学课程
+	//var items=[];
+	$scope.items=[];
+	//添加课程
+	$scope.addItem=function(event){
+		if(event.keyCode=="13"){
+			//this.items.unshift(this.item);
+			$scope.items.unshift($scope.item);
+			$scope.item="";
+		}
+	}
+
+	$scope.limit=4;
+	$scope.books=[
+		{
+			name:"JavaScript高级程序设计",publite:false,ishas:true,updated:1480574804538
+		},
+		{
+			name:"Angular权威指南",publite:true,ishas:false,updated:1470574804525
+		},
+		{
+			name:"Vue实战",publite:false,ishas:true,updated:1465574824536
+		},
+		{
+			name:"Node全栈开发",publite:true,ishas:false,updated:1480271504528
+		}
+	]
+	$scope.price=199.98;
+}])
